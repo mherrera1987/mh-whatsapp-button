@@ -1,0 +1,51 @@
+.mh-wsp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    padding: .25rem 1rem;
+    line-height: 1.25rem;
+    gap: .75rem;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    text-decoration: none;
+}
+
+.mh-wsp.mh-wsp-float-bottom-right {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.mh-wsp.mh-wsp-float-bottom-left {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.mh-wsp .info {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.mh-wsp .info span {
+  font-size: 1rem;
+}
+
+.mh-wsp .info .title {
+    font-weight: bold;
+    font-size: 1.15rem;
+    letter-spacing: 0.025rem;
+}
+
+.mh-wsp .info .phone {
+    font-size: .85rem;
+}
+
+.mh-wsp img {
+    width: 32px;
+    height: 32px;
+}
