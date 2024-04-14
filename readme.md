@@ -1,6 +1,6 @@
 # MH WhatsApp Button WordPress Plugin
 
-Welcome to the MH WhatsApp Button WordPress Plugin, a powerful tool designed to seamlessly integrate WhatsApp communication on your WordPress site. Crafted with precision by [Your Name](https://yourwebsite.com), this plugin is the perfect solution for businesses and individuals looking to enhance their customer service and engagement through direct WhatsApp messaging.
+Welcome to the MH WhatsApp Button WordPress Plugin, a powerful tool designed to seamlessly integrate WhatsApp communication on your WordPress site. Crafted with precision by [Marcelo Herrera](https://marceloherrera.com.ar), this plugin is the perfect solution for businesses and individuals looking to enhance their customer service and engagement through direct WhatsApp messaging.
 
 ## Features
 
