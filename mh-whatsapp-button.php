@@ -1,6 +1,6 @@
 <?php
 /**
-     * Plugin Name: MH WhatsApp Button
+     * Plugin Name: Simple WhatsApp Button
      * Description: Añade un botón flotante de WhatsApp en tu sitio web.
      * Version: 0.1
      * Author: Marcelo Herrera
