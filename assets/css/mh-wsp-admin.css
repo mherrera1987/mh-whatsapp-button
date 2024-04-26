@@ -15,3 +15,99 @@
     font-weight: bold;
     margin: .75rem 0 .25rem 0;
 }
+
+.mh-container h1,
+.mh-container h2,
+.mh-container h3 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.mh-container h1 {
+    font-size: 2.5rem;
+}
+
+.mh-container h2 {
+    font-size: 2rem;
+}
+
+.mh-container h3 {
+    font-size: 1.5rem;
+}
+
+.mh-container input[type="text"],
+.mh-container input[type="email"],
+.mh-container input[type="password"],
+.mh-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.mh-container label {
+    font-size: 1rem;
+    color: #333;
+}
+
+.mh-container .button {
+    display: inline-block;
+    padding: 3px 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.mh-container code {
+    display: block;
+    width: fit-content;
+    background-color: #cdcdcd;
+    margin: 1rem 0;
+    padding: .3rem .6rem;
+}
+
+.mh-container .button-primary {
+    color: #fff;
+    background-color: #2196F3; 
+}
+
+.mh-container .button-primary:hover {
+    background-color: #1976D2; 
+}
+
+.mh-container .button-secondary {
+    color: #333;
+    background-color: #E0E0E0; 
+}
+
+.mh-container .button-secondary:hover {
+    background-color: #BDBDBD; 
+}
+
+.mh-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.mh-container ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.mh-container ul ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.mh-container ul ul li {
+    padding: 5px 0;
+    border: none;
+}

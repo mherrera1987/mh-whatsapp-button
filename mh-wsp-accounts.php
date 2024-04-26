@@ -53,17 +53,8 @@ function mh_wsp_display_meta_box($post) {
 
 //Display the generated shortcode
 function mh_wsp_display_shortcode_meta_box($post) {
-    echo '<label for="mh_wsp_shortcode">Shortcode</label>';
+    echo '<label for="mh_wsp_shortcode">Generated shortcode</label>';
     echo '<input type="text" id="mh_wsp_shortcode" name="mh_wsp_shortcode" value="[mh_wsp_button id=' . $post->ID . ']" class="widefat" disabled />';
-    echo '<h3>Custom attributes:</h3>
-        <ul>
-            <li><b><u>position:</u></b>
-                <ul>
-                    <li><b>fixed_bottom_right</b> <pre>[mh_wsp_button id=1 position="fixed_bottom_right"]</pre> Shows the WhatsApp button in the lower right corner of the screen</li>
-                    <li><b>fixed_bottom_left</b> <pre>[mh_wsp_button id=1 position="fixed_bottom_left"]</pre> Shows the WhatsApp button in the lower left corner of the screen</li>
-                </ul>
-            </li>
-        </ul>';
 }
 
 //Save values for each field

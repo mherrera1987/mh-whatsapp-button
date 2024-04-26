@@ -3,46 +3,43 @@
     align-items: center;
     justify-content: flex-start;
     width: fit-content;
-    padding: .25rem 1rem;
-    line-height: 1.25rem;
-    gap: .75rem;
+    padding: 8px 16px;
+    line-height: 18px;
+    gap: 16px;
     background-color: #25d366;
-    color: #FFF;
     border-radius: 50px;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 2px 2px 3px #999 !important;
     text-decoration: none;
 }
 
 .mh-wsp.mh-wsp-float-bottom-right {
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    z-index: 9999;
+    bottom: 32px;
+    right: 88px;
 }
 
 .mh-wsp.mh-wsp-float-bottom-left {
     position: fixed;
-    bottom: 1rem;
-    left: 1rem;
+    z-index: 9999;
+    bottom: 32px;
+    right: 88px;
 }
 
 .mh-wsp .info {
     display: flex;
     flex-flow: column nowrap;
-}
-
-.mh-wsp .info span {
-  font-size: 1rem;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .mh-wsp .info .title {
     font-weight: bold;
-    font-size: 1.15rem;
-    letter-spacing: 0.025rem;
+    font-size: 16px;
 }
 
 .mh-wsp .info .phone {
-    font-size: .85rem;
+    font-size: 14px;
 }
 
 .mh-wsp img {

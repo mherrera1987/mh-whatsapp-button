@@ -7,20 +7,18 @@ add_action( 'wp_enqueue_scripts', 'mh_wsp_enqueue_styles' );
 
 // CSS backend
 function mh_wsp_enqueue_admin_styles() {
-    global $pagenow;
-    if (is_admin() && $pagenow == 'post.php' && isset($_GET['post']) && get_post_type($_GET['post']) == 'mh-whatsapp-accounts') {
-        wp_enqueue_style('mh-wsp-admin-style', plugins_url('assets/css/mh-wsp-admin.css', __FILE__), array(), '1.0', 'all');
-    }
+    wp_enqueue_style('mh-wsp-admin-style', plugins_url('assets/css/mh-wsp-admin.css', __FILE__), array(), '1.0', 'all');
 }
 add_action('admin_enqueue_scripts', 'mh_wsp_enqueue_admin_styles');
 
-
-//Function to create the shortcode and render the button in the view
+// Function to create the shortcode and render the button in the view
 function mh_wsp_button_shortcode($atts) {
     // Shortcode atts
     $atts = shortcode_atts(array(
         'id' => '', 
         'position' => 'relative',
+        'icon' => 'white', // New attribute for icon
+        'layout' => 'full', // New attribute for layout
     ), $atts, 'mh_wsp_button');
 
     if (empty($atts['id'])) {
@@ -47,13 +45,41 @@ function mh_wsp_button_shortcode($atts) {
         $button_classes .= ' mh-wsp-float-bottom-left';
     }
 
+    // Determine icon based on the 'icon' attribute
+    $icon = $atts['icon'];
+    $icon_filename = '';
+    switch ($icon) {
+        case 'black':
+            $icon_filename = 'mh-wsp-black.png';
+            break;
+        case 'dark-green':
+            $icon_filename = 'mh-wsp-dark-green.png';
+            break;
+        case 'green':
+            $icon_filename = 'mh-wsp-green.png';
+            break;
+        default:
+            $icon_filename = 'mh-wsp-white.png'; // Default to white
+            break;
+    }
+
+    // Determine layout based on the 'layout' attribute
+    $layout = $atts['layout'];
+    $show_layout = ($layout == 'full') ? true : false;
+
+    // Prepare button HTML
     $button_html = '<a href="https://api.whatsapp.com/send?phone=' . esc_attr($phone) . '&text=' . esc_attr($text) . '" class="' . esc_attr($button_classes) . '" target="_blank">
-                        <div class="info">
+                        <img src="' . esc_url( plugins_url( "assets/images/$icon_filename", __FILE__ ) ) . '" alt="' . esc_html__('Whatsapp Button', 'mh-whatsapp-button') . '"/>';
+    
+    // Add layout elements if needed
+    if ($show_layout) {
+        $button_html .= '<div class="info">
                             <span class="title">' . esc_html($title) . '</span>
                             <span class="phone">' . esc_html($phone) . '</span>    
-                        </div>
-                        <img src="' . esc_url( plugins_url( "assets/images/mh-wsp-white.png", __FILE__ ) ) . '" alt="' . esc_html__('Whatsapp Button', 'mh-whatsapp-button') . '"/>
-                    </a>';
+                        </div>';
+    }
+
+    $button_html .= '</a>';
 
     return $button_html;
 }
