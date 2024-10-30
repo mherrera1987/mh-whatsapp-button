@@ -63,53 +63,52 @@ function mh_wsp_add_admin_menu() {
 add_action('admin_menu', 'mh_wsp_add_admin_menu');
 
 function mh_wsp_settings_page() {
-    echo '<h1>MH WhatsApp Button Configuration</h1>';
+    echo '<h1>'  . esc_html__('MH WhatsApp Button Configuration', 'mh-whatsapp-button') . '</h1>';
 }
 
 function mh_wsp_settings_subpage() { ?>
     <section class="mh-container">
-        <h1><?php echo esc_html__( 'MH Whatsapp Button', 'mh-whatsapp-button' ); ?></h1>
+        <h1><?php echo esc_html__( 'MH WhatsApp Button', 'mh-whatsapp-button' ); ?></h1>
         <form method="post" action="options.php">
             <?php settings_fields( 'mh-wsp-settings' ); ?>
             <?php do_settings_sections( 'mh-wsp-settings' ); ?>
             <?php submit_button(); ?>
         </form>
-        <h2>Usage example:</h2>
-        <h3>Shortcode custom attributes:</h3>
+        <h2><?php echo esc_html__( 'Usage example:', 'mh-whatsapp-button' ); ?></h2>
+        <h3><?php echo esc_html__( 'Shortcode custom attributes:', 'mh-whatsapp-button' ); ?></h3>
         <ul>
-            <li><b><u>position:</u></b>
+            <li><b><u><?php echo esc_html__( 'position:', 'mh-whatsapp-button' ); ?></u></b>
                 <ul>
-                    <li><b>fixed_bottom_right</b> <code>[mh_wsp_button id=123 position="fixed_bottom_right"]</code> Shows the WhatsApp button in the lower right corner of the screen.</li>
-                    <li><b>fixed_bottom_left</b> <code>[mh_wsp_button id=123 position="fixed_bottom_left"]</code> Shows the WhatsApp button in the lower left corner of the screen.</li>
+                    <li><b>fixed_bottom_right</b> <code>[mh_wsp_button id=123 position="fixed_bottom_right"]</code> <?php echo esc_html__( 'Shows the WhatsApp button in the lower right corner of the screen.', 'mh-whatsapp-button' ); ?></li>
+                    <li><b>fixed_bottom_left</b> <code>[mh_wsp_button id=123 position="fixed_bottom_left"]</code> <?php echo esc_html__( 'Shows the WhatsApp button in the lower left corner of the screen.', 'mh-whatsapp-button' ); ?></li>
                 </ul>
             </li>
-            <li><b><u>icon:</u></b>
+            <li><b><u><?php echo esc_html__( 'icon:', 'mh-whatsapp-button' ); ?></u></b>
                 <ul>
-                    <li><b>black</b> <code>[mh_wsp_button id="123" icon="black"]</code> Shows the WhatsApp icon in black color.</li>
-                    <li><b>dark-green</b> <code>[mh_wsp_button id="123" icon="dark-green"]</code> Shows the WhatsApp icon in dark green color.</li>
-                    <li><b>green</b> <code>[mh_wsp_button id="123" icon="green"]</code> Shows the WhatsApp icon in green color.</li>
+                    <li><b>black</b> <code>[mh_wsp_button id="123" icon="black"]</code> <?php echo esc_html__( 'Shows the WhatsApp icon in black color.', 'mh-whatsapp-button' ); ?></li>
+                    <li><b>dark-green</b> <code>[mh_wsp_button id="123" icon="dark-green"]</code> <?php echo esc_html__( 'Shows the WhatsApp icon in dark green color.', 'mh-whatsapp-button' ); ?></li>
+                    <li><b>green</b> <code>[mh_wsp_button id="123" icon="green"]</code> <?php echo esc_html__( 'Shows the WhatsApp icon in green color.', 'mh-whatsapp-button' ); ?></li>
                 </ul>
             </li>
-            <li><b><u>layout:</u></b>
+            <li><b><u><?php echo esc_html__( 'layout:', 'mh-whatsapp-button' ); ?></u></b>
                 <ul>
-                    <li><b>simple</b> <code>[mh_wsp_button id=123 layout="simple"]</code> Shows the WhatsApp icon without text.</li>
+                    <li><b>simple</b> <code>[mh_wsp_button id=123 layout="simple"]</code> <?php echo esc_html__( 'Shows the WhatsApp icon without text.', 'mh-whatsapp-button' ); ?></li>
                 </ul>
             </li>
         </ul>
         <div class="faq-section">
-            <h2>Frequently Asked Questions</h2>
+            <h2><?php echo esc_html__( 'Frequently Asked Questions', 'mh-whatsapp-button' ); ?></h2>
             <div class="faq-item">
-                <h3>How can I add a Whatsapp button and make it visible across the entire website?</h3>
-                <p>You can use the following hook. Put in your functions.php</p>
+                <h3><?php echo esc_html__( 'How can I add a WhatsApp button and make it visible across the entire website?', 'mh-whatsapp-button' ); ?></h3>
+                <p><?php echo esc_html__( 'You can use the following hook. Put in your functions.php', 'mh-whatsapp-button' ); ?></p>
                 <pre><code>// Function to add the shortcode to the wp_footer hook
     function add_mh_wsp_button_to_footer() {
         echo do_shortcode('[mh_wsp_button id=14 position="fixed_bottom_right"]');
     }
     add_action('wp_footer', 'add_mh_wsp_button_to_footer');</code></pre>
-                <p>Make sure to replace <b>14</b> with the ID of your generated shortcode</p>
+                <p><?php echo esc_html__( 'Make sure to replace', 'mh-whatsapp-button' ); ?> <b>14</b> <?php echo esc_html__( 'with the ID of your generated shortcode', 'mh-whatsapp-button' ); ?></p>
             </div>
         </div>
     </section>
     <?php
 }
-

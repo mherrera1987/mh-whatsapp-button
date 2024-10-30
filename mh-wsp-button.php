@@ -6,10 +6,11 @@ function mh_wsp_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'mh_wsp_enqueue_styles' );
 
 // CSS backend
-function mh_wsp_enqueue_admin_styles() {
+function mh_wsp_enqueue_admin() {
+    // Main Style
     wp_enqueue_style('mh-wsp-admin-style', plugins_url('assets/css/mh-wsp-admin.css', __FILE__), array(), '1.0', 'all');
 }
-add_action('admin_enqueue_scripts', 'mh_wsp_enqueue_admin_styles');
+add_action('admin_enqueue_scripts', 'mh_wsp_enqueue_admin');
 
 // Function to create the shortcode and render the button in the view
 function mh_wsp_button_shortcode($atts) {
@@ -17,8 +18,8 @@ function mh_wsp_button_shortcode($atts) {
     $atts = shortcode_atts(array(
         'id' => '', 
         'position' => 'relative',
-        'icon' => 'white', // New attribute for icon
-        'layout' => 'full', // New attribute for layout
+        'icon' => 'white',
+        'layout' => 'full', 
     ), $atts, 'mh_wsp_button');
 
     if (empty($atts['id'])) {
@@ -59,7 +60,7 @@ function mh_wsp_button_shortcode($atts) {
             $icon_filename = 'mh-wsp-green.png';
             break;
         default:
-            $icon_filename = 'mh-wsp-white.png'; // Default to white
+            $icon_filename = 'mh-wsp-white.png';
             break;
     }
 

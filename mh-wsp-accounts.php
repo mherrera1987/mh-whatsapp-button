@@ -1,9 +1,8 @@
 <?php
-
 function mh_wsp_register_post_type() {
     $args = array(
         'public' => true,
-        'label'  => 'WhatsApp Accounts',
+        'label'  => __('WhatsApp Accounts', 'mh-whatsapp-button'),
         'supports' => array('title'),
         'show_in_rest' => true, 
         'show_ui' => true,
@@ -20,19 +19,19 @@ add_action('add_meta_boxes', 'mh_wsp_add_meta_boxes');
 function mh_wsp_add_meta_boxes() {
     add_meta_box(
         'mh_wsp_details', 
-        'WhatsApp Account Details',
+        __('WhatsApp Account Details', 'mh-whatsapp-button'),
         'mh_wsp_display_meta_box', 
-        'mh-whatsapp-accounts' 
+        'mh-whatsapp-accounts'
     );
     add_meta_box(
         'mh_wsp_shortcode', 
-        'Shortcode',
+        __('Shortcode', 'mh-whatsapp-button'),
         'mh_wsp_display_shortcode_meta_box', 
-        'mh-whatsapp-accounts' 
+        'mh-whatsapp-accounts'
     );
 }
 
-//Show custom fields
+// Show custom fields
 function mh_wsp_display_meta_box($post) {
     // Generates a nonce for security.
     wp_nonce_field('mh_wsp_save_meta_box_data', 'mh_wsp_meta_box_nonce');
@@ -41,19 +40,19 @@ function mh_wsp_display_meta_box($post) {
     $account_number = get_post_meta($post->ID, '_mh_wsp_account_number', true);
     $predefined_text = get_post_meta($post->ID, '_mh_wsp_predefined_text', true);
 
-    // Field's html
-    echo '<label for="mh_wsp_account_number">Phone number</label>';
+    // Field's HTML
+    echo '<label for="mh_wsp_account_number">' . __('Phone number', 'mh-whatsapp-button') . '</label>';
     echo '<input type="text" id="mh_wsp_account_number" name="mh_wsp_account_number" value="' . esc_attr($account_number) . '" class="widefat" />';
-    echo '<small>Here you must enter the telephone number of the WhatsApp or WhatsApp Business account.</small>';
+    echo '<small>' . __('Here you must enter the telephone number of the WhatsApp or WhatsApp Business account.', 'mh-whatsapp-button') . '</small>';
 
-    echo '<label for="mh_wsp_predefined_text">Predefined text</label>';
+    echo '<label for="mh_wsp_predefined_text">' . __('Predefined text', 'mh-whatsapp-button') . '</label>';
     echo '<textarea id="mh_wsp_predefined_text" name="mh_wsp_predefined_text" class="widefat">' . esc_textarea($predefined_text) . '</textarea>';
-    echo '<small>This text will be sent as the first message to start the conversation.</small>';
+    echo '<small>' . __('This text will be sent as the first message to start the conversation.', 'mh-whatsapp-button') . '</small>';
 }
 
-//Display the generated shortcode
+// Display the generated shortcode
 function mh_wsp_display_shortcode_meta_box($post) {
-    echo '<label for="mh_wsp_shortcode">Generated shortcode</label>';
+    echo '<label for="mh_wsp_shortcode">' . __('Generated shortcode', 'mh-whatsapp-button') . '</label>';
     echo '<input type="text" id="mh_wsp_shortcode" name="mh_wsp_shortcode" value="[mh_wsp_button id=' . $post->ID . ']" class="widefat" disabled />';
 }
 

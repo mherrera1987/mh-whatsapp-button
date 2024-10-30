@@ -1,8 +1,8 @@
 <?php
 /**
      * Plugin Name: MH WhatsApp Button
-     * Description: Añade un botón flotante de WhatsApp en tu sitio web.
-     * Version: 0.2
+     * Description: Add a floating WhatsApp button to your website.
+     * Version: 1.0.0
      * Author: Marcelo Herrera
      * Author URI: https://marceloherrera.com.ar
      * Text Domain: mh-whatsapp-button
